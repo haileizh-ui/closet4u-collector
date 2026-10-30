@@ -1,0 +1,13 @@
+{
+  "name": "closet4u-collector",
+  "version": "1.4.6",
+  "private": true,
+  "description": "Closet4U 灵感采集 Chrome 扩展：采集小红书 / 抖音 / 微信公众号图文与视频到 Closet4U",
+  "scripts": {
+    "test": "node test-background.cjs && node test-task-tracker.cjs && node test-history-ui.cjs",
+    "test:browser": "node test-extractors.cjs && node test-concurrent-ui.cjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.1"
+  }
+}

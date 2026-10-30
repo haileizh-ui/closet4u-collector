@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "Closet 灵感采集",
+  "version": "1.4.6",
+  "minimum_chrome_version": "120",
+  "description": "采集小红书图文/视频、抖音视频及微信公众号图片图集到 Closet4U，自动创建素材并发布。",
+  "permissions": [
+    "storage",
+    "scripting",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://www.xiaohongshu.com/*",
+    "https://closet.cuddlycuddle.com/*",
+    "https://danime.dawoai.com/*",
+    "https://www.douyin.com/*",
+    "https://mp.weixin.qq.com/*",
+    "https://www.rednote.com/*"
+  ],
+  "optional_host_permissions": [
+    "https://*/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "options.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    },
+    "default_title": "Closet4U 灵感采集"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.xiaohongshu.com/*",
+        "https://www.douyin.com/*",
+        "https://mp.weixin.qq.com/s*",
+        "https://www.rednote.com/*"
+      ],
+      "js": [
+        "history-ui.js",
+        "content.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}
